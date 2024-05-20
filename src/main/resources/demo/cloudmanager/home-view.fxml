@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="resize_border" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo.cloudmanager.HomeViewController">
+   <children>
+      <BorderPane layoutX="61.0" layoutY="85.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane id="root_pane" fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="780.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ButtonBar id="title_bar" fx:id="titleBar" buttonMinWidth="20.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onMouseClicked="#handleTitleBarDoubleClickAction" onMouseDragged="#handleWindowDraggedAction" onMousePressed="#getMouseCoordinates" prefHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                    <buttons>
+                      <Button fx:id="btMin" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleMinButtonAction" prefHeight="20.0" prefWidth="20.0">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Minimize.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btMax" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleMaxButtonAction" prefHeight="20.0" prefWidth="20.0">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Resize.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btClose" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="20.0" prefWidth="20.0">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Exit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                    </buttons>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </ButtonBar>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="248.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="40.0">
+                     <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="248.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                           <image>
+                              <Image url="@images/IconBig.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <MenuButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="60.0" prefWidth="60.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="40.0">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                     <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                           <image>
+                              <Image url="@images/Menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuButton>
+                  <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints percentHeight="55.0" vgrow="SOMETIMES" />
+                      <RowConstraints percentHeight="45.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <AnchorPane id="cloud_window" prefHeight="200.0" prefWidth="200.0">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="15.0" right="5.0" />
+                                 </GridPane.margin>
+                                 <children>
+                                    <TextField fx:id="cloudFileSearchTopL" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="2.0" maxHeight="-Infinity" minHeight="-Infinity" onAction="#handleCloudFileSearchTopL" prefHeight="20.0" promptText="Search..." AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Monospaced Regular" size="13.0" />
+                                       </font></TextField>
+                                    <MenuButton contentDisplay="GRAPHIC_ONLY" layoutX="529.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="20.0" prefWidth="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                                      </items>
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/Settings.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Monospaced Regular" size="14.0" />
+                                       </font>
+                                    </MenuButton>
+                                    <AnchorPane fx:id="cloudFileAnchorTopL" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane id="cloud_window" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <TextField fx:id="cloudFileSearchTopR" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="2.0" maxHeight="-Infinity" minHeight="-Infinity" onAction="#handleCloudFileSearchTopR" prefHeight="20.0" promptText="Search..." AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Monospaced Bold" size="13.0" />
+                                       </font></TextField>
+                                    <MenuButton contentDisplay="GRAPHIC_ONLY" layoutX="529.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="20.0" prefWidth="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Action 1" />
+                                          <MenuItem mnemonicParsing="false" text="Action 2" />
+                                       </items>
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/Settings.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Monospaced Regular" size="14.0" />
+                                       </font>
+                                    </MenuButton>
+                                    <AnchorPane fx:id="cloudFileAnchorTopR" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="5.0" right="15.0" />
+                                 </GridPane.margin>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                        <AnchorPane id="cloud_window" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="cloudFileSearchBottom" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="2.0" maxHeight="-Infinity" minHeight="-Infinity" onAction="#handleCloudFileSearchBottom" prefHeight="20.0" promptText="Search..." AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="10.0">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font></TextField>
+                              <MenuButton contentDisplay="GRAPHIC_ONLY" layoutX="529.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="20.0" prefWidth="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/Settings.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Monospaced Regular" size="14.0" />
+                                 </font>
+                              </MenuButton>
+                              <AnchorPane fx:id="cloudFileAnchorBottom" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" />
+                           </GridPane.margin>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <GridPane id="resize_border" fx:id="resizeBarUp" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="10.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane id="resize_border" onMouseDragged="#handleUpperLeftCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0">
+                     <cursor>
+                        <Cursor fx:constant="NW_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleUpperResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="S_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleUpperRightCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="NE_RESIZE" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </GridPane>
+         </top>
+         <left>
+            <GridPane id="resize_border" fx:id="resizeBarLeft" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane id="resize_border" onMouseDragged="#handleUpperLeftCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0">
+                     <cursor>
+                        <Cursor fx:constant="SE_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleLeftResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="W_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleBottomLeftCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="SW_RESIZE" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </GridPane>
+         </left>
+         <right>
+            <GridPane id="resize_border" fx:id="resizeBarRight" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane id="resize_border" onMouseDragged="#handleUpperRightCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0">
+                     <cursor>
+                        <Cursor fx:constant="SW_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleRightResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="W_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleBottomRightCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="NW_RESIZE" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </GridPane>
+         </right>
+         <bottom>
+            <GridPane id="resize_border" fx:id="resizeBarDown" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="10.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane id="resize_border" onMouseDragged="#handleBottomLeftCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0">
+                     <cursor>
+                        <Cursor fx:constant="SW_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleBottomResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="S_RESIZE" />
+                     </cursor>
+                  </Pane>
+                  <Pane id="resize_border" onMouseDragged="#handleBottomRightCornerResizeAction" onMousePressed="#getMouseCoordinates" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="NW_RESIZE" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
