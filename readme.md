@@ -1,0 +1,1 @@
+[![Watch the video](https://raw.githubusercontent.com/DianaCristescu/CloudManager/blob/main/showcase/CloudManager_showcase_thumbnail.png)](https://raw.githubusercontent.com/DianaCristescu/CloudManager/blob/main/showcase/CloudManager_showcase.mp4)
