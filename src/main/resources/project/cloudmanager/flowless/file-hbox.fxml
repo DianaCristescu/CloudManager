@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox fx:id="layout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane HBox.hgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+          <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="7.0">
+                     <image>
+                        <Image url="@../images/SimpleFolder.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="name" maxWidth="200.0" text="exemple.pdf" textFill="#b5b3ae" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="17.0">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="date" text="dd/mm/yyyy hh:mm a" textFill="#b5b3ae" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="17.0">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="size" text="80000 B" textFill="#b5b3ae" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="17.0">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</HBox>

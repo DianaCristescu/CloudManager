@@ -1,0 +1,211 @@
+
+/* ----------------- VARIABLES ----------------- */
+
+
+* {
+    -fx-my-dark-background-color: #181425;
+    -fx-my-light-background-color: #3a4465;
+    -fx-my-menu-color-highlighted: #2f3752;
+    -fx-my-scroll-bar-color: #2f3454;
+    -fx-my-light-font-color: #b5b3ae;
+    -fx-my-border-color-1: #262a44;
+    -fx-my-border-color-2: #3e2731;
+}
+
+
+/* ----------------- CLASSES ----------------- */
+
+
+/* --- MENU BUTTON --- */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 0 0;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.menu-button > .arrow-button,
+.menu-button > .label{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.menu-button > .arrow-button > .arrow {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* MENU BAR + Top-level MENU BUTTONS */
+/*** The menu bar itself ***/
+.menu-bar {
+    -fx-background-color: -fx-my-light-background-color;
+}
+
+/*** Top-level menu itself (not selected / hovered) ***/
+.menu-bar > .container > .menu-button {
+    -fx-background-color: -fx-my-light-background-color;
+}
+
+/*** Top-level menu's label (not selected / hovered) ***/
+.menu-bar > .container > .menu-button > .label {
+    -fx-text-fill: -fx-my-light-font-color;
+}
+
+/*** Top-level menu's label (disabled) ***/
+.menu-bar > .container > .menu-button > .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+/*** Top-level menu itself (selected / hovered) ***/
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/*** Top-level menu's label (selected / hovered) ***/
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: -fx-my-light-font-color;
+}
+
+/* MENU ITEM (children of a MENU BUTTON) */
+/*** The item itself (not hovered / focused) ***/
+.menu-item {
+    -fx-background-color: -fx-my-light-background-color;
+}
+
+/*** The item's label (not hovered / focused) ***/
+.menu-item .label {
+    -fx-text-fill: -fx-my-light-font-color;
+}
+
+/*** The item's label (disabled) ***/
+.menu-item .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+/*** The item itself (hovered / focused) ***/
+.menu-item:focused, .menu-item:hovered {
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/*** The item's label (hovered / focused) ***/
+.menu-item:focused .label, .menu-item:hovered .label {
+    -fx-text-fill: -fx-my-light-font-color;
+}
+
+/* CONTEXT MENU */
+/*** The context menu that contains a menu's menu items ***/
+.context-menu {
+    -fx-background-color: -fx-my-light-background-color; /* Background color */
+    -fx-border-color: -fx-my-border-color-1, -fx-my-border-color-2; /* Border colors */
+    -fx-border-width: 2, 1; /* Border widths */
+    -fx-border-radius: 5, 6; /* Border radius */
+    -fx-background-radius: 10;
+}
+
+
+/* --- BUTTON --- */
+.button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 0 0;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+
+/* --- TEXT FIELD --- */
+.text-field {
+    -fx-background-color: -fx-my-border-color-1, -fx-my-light-background-color;
+    -fx-background-insets: 0, 0 0 2 0 ;
+    -fx-background-radius: 0;
+    -fx-prompt-text-fill: -fx-my-light-font-color;
+    -fx-text-fill: -fx-my-light-font-color;
+}
+
+
+/* --- SCROLL PANE --- */
+.scroll-pane, .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+.increment-button, .decrement-button, .increment-arrow, .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -fx-my-scroll-bar-color;
+    -fx-background-radius: 5em;
+
+}
+.scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+
+/* --- HBOX --- */
+.custom-hbox {
+    -fx-padding: 5;
+    -fx-background-color: -fx-my-scroll-bar-color;
+    -fx-spacing: 50;
+    -fx-background-insets: 0.5, 0, 0.5, 0; /* Top, Right, Bottom, Left */
+}
+
+
+/* ----------------- LABELS ----------------- */
+
+#title_bar, #title_bar_maximized {
+    -fx-background-color: -fx-my-light-background-color; /* Background color */
+    -fx-border-color: transparent transparent -fx-my-border-color-1 transparent, transparent transparent -fx-my-border-color-2 transparent; /* Border colors */
+    -fx-border-width: 0 0 3 0, 0 0 2 0; /* Border widths */
+}
+#title_bar {
+    -fx-background-radius: 10 10 0 0;
+}
+
+
+#grid_pane {
+    -fx-background-color: -fx-my-light-background-color;
+}
+
+
+#resize_border {
+    -fx-background-color: rgba(0, 0, 0, 0.01);
+}
+#resize_border_removed {
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+
+#cloud_window {
+    -fx-background-color: -fx-my-light-background-color; /* Background color */
+    -fx-border-color: -fx-my-border-color-1, -fx-my-border-color-2; /* Border colors */
+    -fx-border-width: 3, 2; /* Border widths */
+    -fx-border-radius: 5, 6; /* Border radius */
+    -fx-background-radius: 10;
+}
+
+
+#root_pane {
+    -fx-background-color: -fx-my-dark-background-color;
+    -fx-background-radius: 10;
+}
+#root_pane_maximized {
+    -fx-background-color: -fx-my-dark-background-color;
+}
+
+#selected_hbox {
+    -fx-background-color: -fx-my-light-background-color;
+}
+
+#normal_hbox {
+    -fx-background-color: -fx-my-scroll-bar-color;
+}
